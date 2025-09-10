@@ -1,2 +1,1 @@
-# mini-incubator-
-Project for our SEM subject
+"# Mini Startup Incubation Portal" 
