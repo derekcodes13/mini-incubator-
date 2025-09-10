@@ -28,3 +28,19 @@ app.get("/api/protected", authMiddleware, (req, res) => {
     message: `Hello user ${req.user.userId}, role: ${req.user.role}`,
   });
 });
+const db = require("./db"); // connect to MySQL
+
+// Example test route
+app.get("/", (req, res) => {
+  res.send("Mini Incubator API running...");
+});
+
+// Example DB test
+app.get("/users", (req, res) => {
+  db.query("SELECT * FROM users", (err, results) => {
+    if (err) throw err;
+    res.json(results);
+  });
+});
+
+app.listen(5000, () => console.log("Server running on port 5000"));
